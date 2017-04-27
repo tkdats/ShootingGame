@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.BorderLayout;
 import java.awt.event.KeyListener;
@@ -11,17 +12,22 @@ import java.awt.event.KeyEvent;
 public class MainClass extends JFrame{
 	
     public static void main(String args[]){
-    	MainClass frame = new MainClass("ゲーム画面");//引数はWindow Title
+    	MainClass frame = new MainClass("game");
         frame.setVisible(true);
     }
 
     //constructor. フレームの設定関係を行う
     MainClass(String title){
         setTitle(title);
-        setSize(Utility.sizex+Utility.ScoreBoardWidth,Utility.sizey);
-        setLocationRelativeTo(null);//初期画面表示位置を中央に
+        //setSize(Utility.sizex+Utility.ScoreBoardWidth,Utility.sizey);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//CLOSEでプログラム終了
-
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().setPreferredSize(new Dimension(Utility.sizex+Utility.ScoreBoardWidth, Utility.sizey));
+        pack();
+        setLocationRelativeTo(null);//初期画面表示位置を中央に
+        setVisible(true);
+        
         Container CP = getContentPane();//getContentPane()はJFrameクラスに定義されている
         //CP.setLayout(null);//レイアウトマネージャを停止
 
@@ -47,6 +53,7 @@ class MainPanel extends JPanel implements Runnable, KeyListener{
     GameInfo gameinfo = new GameInfo();
     GameManeger mgr=new GameManeger(gameinfo);
     private long _startTime;
+    private double diff=0;
     
     MainPanel(){
         //setLayout(null);
@@ -66,13 +73,14 @@ class MainPanel extends JPanel implements Runnable, KeyListener{
         	mgr.onUpdate(gameinfo);
         	
             repaint();
-            while(System.currentTimeMillis()-_startTime<17){
+            while(System.currentTimeMillis()-_startTime<17-(long)diff){
             	try {
                     Thread.sleep(1);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
+            diff+=(System.currentTimeMillis()-_startTime)-(double)1000/60;
         }
     }
 
