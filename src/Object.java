@@ -7,9 +7,9 @@ public abstract class Object {
 		public double width;
 		public double height;
 		public double hitpoint;
-		public boolean friendly;
+		public boolean isMikata;
 		public boolean listed=false;
-		public boolean available=true;
+		public boolean exist=true;
 		public String GraphicHandle;
         public boolean onUpdate(GameInfo gameinfo){
                 return true;

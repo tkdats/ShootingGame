@@ -7,6 +7,8 @@ public class Player extends Object {
 		width=20;
 		height=20;
 		r=10;
+		x=Utility.sizex/2;
+		y=Utility.sizey/2;
 	}
 	
 	 @Override
@@ -24,6 +26,7 @@ public class Player extends Object {
         	   x-=5;
            }
            if(gameinfo.keyPressed[4]){//z
+        	   //’e‚ð”­ŽË
         	   gameinfo.bulletGenerater.generate(new SampleBullet1(x,y,(double)0,(double)-10));
            }
             return true;

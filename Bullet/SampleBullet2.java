@@ -14,14 +14,14 @@ public class SampleBullet2 extends Bullet{
 		width=5;
 		height=5;
 		r=5;
-		friendly=false;
+		isMikata=false;
 	}
 	@Override
     public boolean onUpdate(GameInfo gameinfo){
     	x+=vx;
     	y+=vy;
     	if(!Utility.onScreen(x,y)){
-    		available=false;
+    		exist=false;
     	}
             return true;
     }

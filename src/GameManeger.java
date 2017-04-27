@@ -20,7 +20,7 @@ public class GameManeger {
         }
         private static void objectRemover(LinkedList<Object> _list){
         	for(int i=0; i<_list.size(); i++){
-                if(!_list.get(i).available){ 
+                if(!_list.get(i).exist){ 
                 	_list.remove(i);              
                         i--;
                 }
@@ -28,7 +28,7 @@ public class GameManeger {
         }
         private static void enemyRemover(LinkedList<Enemy> _list){
         	for(int i=0; i<_list.size(); i++){
-                if(!_list.get(i).available){ 
+                if(!_list.get(i).exist){ 
                 	_list.remove(i);              
                         i--;
                 }
@@ -36,7 +36,7 @@ public class GameManeger {
         }
         private static void bulletRemover(LinkedList<Bullet> _list){
         	for(int i=0; i<_list.size(); i++){
-                if(!_list.get(i).available){ 
+                if(!_list.get(i).exist){ 
                 	_list.remove(i);              
                         i--;
                 }
