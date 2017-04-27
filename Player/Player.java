@@ -39,6 +39,10 @@ public class Player extends Object {
         	   //���e����������
         	   gameinfo.bulletGenerater.generate(new SampleBullet1(x,y,(double)0,(double)-10));
            }
+           
+           if (hitpoint <= 0){
+        	   exist = false;
+           }
             return true;
      }
 
