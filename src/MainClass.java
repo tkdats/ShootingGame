@@ -18,7 +18,7 @@ public class MainClass extends JFrame{
     //constructor. フレームの設定関係を行う
     MainClass(String title){
         setTitle(title);
-        setSize(Utility.sizex,Utility.sizey);
+        setSize(Utility.sizex+Utility.ScoreBoardWidth,Utility.sizey);
         setLocationRelativeTo(null);//初期画面表示位置を中央に
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//CLOSEでプログラム終了
 

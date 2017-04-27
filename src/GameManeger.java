@@ -10,11 +10,13 @@ public class GameManeger {
         
        
         Player player=new Player();
+        ScoreBoard scoreboard=new ScoreBoard();
         EnemyGenerater enemyGenerater=new EnemyGenerater();
         CollisionDetector collisionDetector = new CollisionDetector();
         GameManeger(GameInfo gameinfo){
         		_objectList.add( new FpsController() );
                 _objectList.add(player);
+                _objectList.add(scoreboard);
                 gameinfo.bulletGenerater.setBullets(_bullets);
                 gameinfo.player=player;
         }
@@ -69,7 +71,8 @@ public class GameManeger {
 
         public void onDraw(Graphics g) {
                 g.setColor(Color.BLACK);
-                g.fillRect(0, 0, 500, 500);
+                g.fillRect(0, 0, Utility.sizex, Utility.sizey);
+               
                 for(int i=0; i<_objectList.size(); i++){
                 	_objectList.get(i).onDraw(g);//•`‰æ
                 }
