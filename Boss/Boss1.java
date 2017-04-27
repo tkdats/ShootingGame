@@ -16,16 +16,19 @@ public class Boss1 extends Enemy{
 		width=50;
 		height=50;
 		r=10;
-		hitpoint=300;
+		hitpoint=10;
 	}
     public boolean onUpdate(GameInfo gameinfo){
-    	//画面内に収まるならランダムに動く、そうでなければ動かない
+    	//100フレーム毎に画面内に収まるならランダムに動く、そうでなければ動かない
     	if(gameinfo.frames % 100==0){
-    	double new_x=x+(-1+v_rnd.nextDouble()*2)*200;
-    	double new_y=y+(-1+v_rnd.nextDouble()*2)*5;
-    	if(Utility.onScreen(new_x,new_y)){
-    	x=new_x;
-    	y=new_y;
+    		double temp_x=x;
+        	double temp_y=y;
+        	x+=(-1+v_rnd.nextDouble()*2)*200;
+        	y+=(-1+v_rnd.nextDouble()*2)*5;
+    	
+    	if(!Utility.onScreen(this)){
+    	x=temp_x;
+    	y=temp_y;
     	}
     	}
     	//5フレームに1回弾を発射する
