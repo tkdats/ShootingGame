@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 public class MainClass extends JFrame{
 	
     public static void main(String args[]){
-    	MainClass frame = new MainClass("ƒQ[ƒ€‰æ–Ê");//ˆø”‚ÍWindow Title
+    	MainClass frame = new MainClass("game");
         frame.setVisible(true);
     }
 
@@ -47,6 +47,7 @@ class MainPanel extends JPanel implements Runnable, KeyListener{
     GameInfo gameinfo = new GameInfo();
     GameManeger mgr=new GameManeger(gameinfo);
     private long _startTime;
+    private double diff=0;
     
     MainPanel(){
         //setLayout(null);
@@ -66,13 +67,14 @@ class MainPanel extends JPanel implements Runnable, KeyListener{
         	mgr.onUpdate(gameinfo);
         	
             repaint();
-            while(System.currentTimeMillis()-_startTime<17){
+            while(System.currentTimeMillis()-_startTime<17-(long)diff){
             	try {
                     Thread.sleep(1);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
+            diff+=(System.currentTimeMillis()-_startTime)-(double)1000/60;
         }
     }
 
