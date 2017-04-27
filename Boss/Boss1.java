@@ -40,6 +40,7 @@ public class Boss1 extends Enemy{
     	//‰æ–ÊŠO‚Ü‚½‚ÍHP<0‚ÅÁ–Å
     	if(!Utility.onScreen(x,y)||hitpoint<0){
     		exist=false;
+    		gameinfo.clear=true;
     	}
         return true;
     }
