@@ -3,13 +3,18 @@ import java.util.Random;
 
 public class EnemyGenerater {
 	Random rnd=new Random();
+	boolean BossFlag=false;
 	public void generate(GameInfo gameinfo, LinkedList<Enemy> _enemies) {
 		//10フレーム1回SampleEnemy1を出す。
-		if(gameinfo.frames==1000){
+		if(gameinfo.score>5000 && !BossFlag){
 			_enemies.add(new Boss1(250,25,0,0));
+			BossFlag=true;
 		}
-		if(gameinfo.frames%10==0){
+		if(gameinfo.frames%200==0){
 			_enemies.add(new WeakEnemy1((double)rnd.nextInt(Utility.sizex),(double)(rnd.nextInt(150)),(double)(rnd.nextInt(10)-5),3));
+		}
+		if(gameinfo.frames%200==0){
+			_enemies.add(new WeakEnemy2((double)rnd.nextInt(Utility.sizex),(double)(rnd.nextInt(150)),(double)(rnd.nextInt(10)-5),3));
 		}
 	}
 
