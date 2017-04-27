@@ -12,7 +12,7 @@ public class Utility {
 		}
 	}
 	static boolean onScreen(Object obj){
-		if(obj.x+(obj.width/2)>0 && obj.y+(obj.height/2)>0 && obj.x-(obj.width/2)<sizex && obj.y-(obj.height/2)<sizey){
+		if(obj.x-(obj.width/2)>0 && obj.y-(obj.height/2)>0 && obj.x+(obj.width/2)<sizex && obj.y+(obj.height/2)<sizey){
 			return true;
 		}else{
 			return false;
