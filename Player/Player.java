@@ -10,6 +10,7 @@ public class Player extends Object {
 		r=10;
 		x=Utility.sizex/2;
 		y=Utility.sizey/2;
+		hitpoint=5;
 	}
 	
 	 @Override

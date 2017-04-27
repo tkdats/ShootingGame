@@ -25,6 +25,7 @@ public class CollisionDetector {
     		}else{
     			if(isHit(player,_bullets.get(i))){
     				_bullets.get(i).exist=false;
+    				player.hp-=1;//˜M‚Á‚½
     			}
     		}
     	}
