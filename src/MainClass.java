@@ -2,6 +2,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.BorderLayout;
 import java.awt.event.KeyListener;
@@ -18,10 +19,15 @@ public class MainClass extends JFrame{
     //constructor. フレームの設定関係を行う
     MainClass(String title){
         setTitle(title);
-        setSize(Utility.sizex+Utility.ScoreBoardWidth,Utility.sizey);
-        setLocationRelativeTo(null);//初期画面表示位置を中央に
+        //setSize(Utility.sizex+Utility.ScoreBoardWidth,Utility.sizey);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//CLOSEでプログラム終了
-
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().setPreferredSize(new Dimension(Utility.sizex+Utility.ScoreBoardWidth, Utility.sizey));
+        pack();
+        setLocationRelativeTo(null);//初期画面表示位置を中央に
+        setVisible(true);
+        
         Container CP = getContentPane();//getContentPane()はJFrameクラスに定義されている
         //CP.setLayout(null);//レイアウトマネージャを停止
 
