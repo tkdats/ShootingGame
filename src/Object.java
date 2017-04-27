@@ -7,7 +7,6 @@ public abstract class Object {
 		public double width;
 		public double height;
 		public double hitpoint;
-		public double hp;//˜M‚Á‚½
 		public boolean isMikata;
 		public boolean listed=false;
 		public boolean exist=true;
