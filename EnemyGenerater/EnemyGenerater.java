@@ -8,6 +8,9 @@ public class EnemyGenerater {
 		if(gameinfo.frames%10==0){
 			_enemies.add(new SampleEnemy1((double)rnd.nextInt(Utility.sizex),1,(double)(rnd.nextInt(10)-5),3));
 		}
+		if(gameinfo.frames==100){
+			_enemies.add(new SampleBoss((double)rnd.nextInt(Utility.sizex),1,(double)(rnd.nextInt(10)-5),3));
+		}
 	}
 	
 }
