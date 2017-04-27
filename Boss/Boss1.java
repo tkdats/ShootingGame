@@ -31,7 +31,7 @@ public class Boss1 extends Enemy{
     	//5ƒtƒŒ[ƒ€‚É1‰ñ’e‚ğ”­Ë‚·‚é
     	if(gameinfo.frames % 5==0){
     		double t=rnd.nextDouble()*2*Math.PI;
-    		gameinfo.bulletGenerater.generate(new SampleBullet2(x,y,2*Math.cos(t),2*Math.sin(t)));
+    		gameinfo.bulletGenerater.generate(new BossBullet(x,y,2*Math.cos(t),2*Math.sin(t)));
     	}
     	
     	//‰æ–ÊŠO‚Ü‚½‚ÍHP<0‚ÅÁ–Å
