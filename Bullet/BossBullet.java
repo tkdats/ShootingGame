@@ -14,7 +14,7 @@ public class BossBullet extends Bullet{
 		width=5;
 		height=5;
 		r=5;
-		isMikata=true;
+		isMikata=false;
 	}
 	@Override
     public boolean onUpdate(GameInfo gameinfo){
