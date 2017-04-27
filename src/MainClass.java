@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import java.awt.BorderLayout;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
-
+//takeda
 //JFrame ‚ğŒp³
 public class MainClass extends JFrame{
 	
