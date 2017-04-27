@@ -9,7 +9,7 @@ public class EnemyGenerater {
 			_enemies.add(new SampleEnemy1((double)rnd.nextInt(Utility.sizex),1,(double)(rnd.nextInt(10)-5),3));
 		}
 		if(gameinfo.frames==100){
-			_enemies.add(new SampleBoss((double)rnd.nextInt(Utility.sizex),1,(double)(rnd.nextInt(10)-5),3));
+			_enemies.add(new Boss1(250,25,0,0));
 		}
 	}
 	
