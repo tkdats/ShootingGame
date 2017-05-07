@@ -1,36 +1,37 @@
-##�S�̓I�Ȃ��� 
-�����ȂƂ�����Q�l�ɂ��Ă����猴�^���Ȃ��Ȃ�܂����B  
-���ꂼ�ꂪ�P�̃\�[�X�t�H���_�̒S���ɂȂ�A���̃t�H���_��ύX�������Ƃ��͂��̃t�H���_�̒S���̐l���肢����Ƃ��������ɂ��܂��傤  
-��ʏ�ɕ\���������̂͂��ׂ�Object�N���X���p�����Ă��܂��B  
-�܂�AObject�N���X�ɏ����ꂽ���������ʂ��Ď����Ă��܂��B  
-Object�N���X�ɂ�onUpdate�֐�,onDraw�֐�,���W�A�������A�����t���O�Ȃǂ�������Ă��܂�  
-Enemy,Player,Bullet��Object���p������̂�onUpdate�֐���onDraw�֐��������Ă���A�����͖��t���[���Ă΂��悤�ɂ��Ă���܂��B  
-onUpdate�֐��ɓ����Ȃǂ̏����AonDraw�֐��ɕ`�揈���������ĉ�����
+##全体的なこと 
+いろんなところを参考にしていたら原型がなくなりました。  
+それぞれが１つのソースフォルダの担当になり、他のフォルダを変更したいときはそのフォルダの担当の人お願いするという感じにしましょう  
+画面上に表示されるものはすべてObjectクラスを継承しています。  
+つまり、Objectクラスに書かれた性質を共通して持っています。  
+ObjectクラスにはonUpdate関数,onDraw関数,座標、幅高さ、味方フラグなどが書かれています  
+Enemy,Player,BulletはObjectを継承するのでonUpdate関数とonDraw関数を持っており、これらは毎フレーム呼ばれるようにしてあります。  
+onUpdate関数に動きなどの処理、onDraw関数に描画処理を書いて下さい
 
-##�e�t�H���_�ɂ��� 
+##各フォルダについて 
 
 #src 
-�S�̂������ǂ镔���ł�
+全体をつかさどる部分です
 
 #Bullet
-�e�̂������Ƃ�  
-Bullet�N���X���p�������N���X������ĐV������ނ̒e���`���Ă�������
+弾のうごきとか  
+Bulletクラスを継承したクラスを作って新しい種類の弾を定義してください
 
 #Player
-���@�̓����Ƃ�
+自機の動きとか
 
 #CollisionDetector
-�Փ˔���  
-check�֐������t���[���Ă΂�܂��B
+衝突判定  
+check関数が毎フレーム呼ばれます。
 
 #Enemy
-�G�̓����Ƃ�  
-Enemy�N���X���p�������N���X������ĐV������ނ̓G���`���Ă�������
+敵の動きとか  
+Enemyクラスを継承したクラスを作って新しい種類の敵を定義してください
 
 #EnemyGenerater
-�G�̏o���p�^�[��  
-generate�֐������t���[���Ă΂��̂�_enemies.add(new �G�̎�ނ̖��O(...))�݂����Ȋ����œG�𐶐����Ă��������B  
+敵の出現パターン  
+generate関数が毎フレーム呼ばれるので_enemies.add(new 敵の種類の名前(...))みたいな感じで敵を生成してください。  
 
-##����ĂȂ�����
-�Q�[���̏�ԑJ�ځi�Q�[���I�[�o�[�Ȃǁj  
-�w�i�A�A�C�e���A�X�R�A�\��
+##やってないこと
+ゲームの状態遷移（ゲームオーバーなど）  
+背景、アイテム、スコア表示
+aa
