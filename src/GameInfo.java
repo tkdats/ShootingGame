@@ -9,6 +9,7 @@ public class GameInfo {
 	public boolean[] keyPressed=new boolean[KeyNum];
 	public boolean[] tmp_Pressed=new boolean[KeyNum];
 	boolean clear;
+	boolean gameOver;
 	GameInfo(){
 		 for(int i=0;i<KeyNum;i++){
 			 tmp_Pressed[i]=false;

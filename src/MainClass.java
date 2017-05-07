@@ -22,7 +22,6 @@ public class MainClass extends JFrame{
         //setSize(Utility.sizex+Utility.ScoreBoardWidth,Utility.sizey);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//CLOSEでプログラム終了
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setPreferredSize(new Dimension(Utility.sizex+Utility.ScoreBoardWidth, Utility.sizey));
         pack();
         setLocationRelativeTo(null);//初期画面表示位置を中央に
