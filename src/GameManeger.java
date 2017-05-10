@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.util.LinkedList;
 
@@ -29,6 +30,7 @@ public class GameManeger {
 		_objectList.add(scoreboard);
 		gameinfo.bulletGenerater.setBullets(_bullets);
 		gameinfo.player = player;
+		gameinfo.frames=0;
 	}
 
 	private void removeAll() {
@@ -131,8 +133,10 @@ public class GameManeger {
 		g.fillRect(0, 0, Utility.sizex + Utility.ScoreBoardWidth, Utility.sizey);
 		//////////////////////////////////////////tmp
 		if (gameState == GameState.TITLE) {
-			g.setColor(Color.RED);
-			g.drawString("Press z to start", (Utility.sizex + Utility.ScoreBoardWidth) / 2, Utility.sizey / 3);
+			g.setColor(Color.BLUE);
+			g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+			Utility.drawStringCenter(g, "Title", (Utility.sizex + Utility.ScoreBoardWidth) / 2, Utility.sizey / 3);
+			Utility.drawStringCenter(g, "Press z to start", (Utility.sizex + Utility.ScoreBoardWidth) / 2, (Utility.sizey*2) / 3);
 		}
 		
 		if (gameState == GameState.GAMEOVER) {
