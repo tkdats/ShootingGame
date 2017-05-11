@@ -5,7 +5,7 @@ import java.util.Random;
 public class Boss1 extends Enemy{
 	private double vx;
 	private double vy;
-	private int count=1;
+	private static int count=1;
 	
 	//初期化
 	Boss1(double  _x,double  _y, double  _vx,double  _vy){
@@ -22,7 +22,7 @@ public class Boss1 extends Enemy{
     	Random rnd= new Random();
     	Random v_rnd= new Random();
     	//100フレーム毎に画面内に収まるならランダムに動く、そうでなければ動かない
-    	if(gameinfo.frames % 100/count==0){
+    	if(gameinfo.frames % ((100/count)+1)==0){
     		double temp_x=x;
         	double temp_y=y;
         	x+=(-1+v_rnd.nextDouble()*2)*200;
@@ -34,7 +34,7 @@ public class Boss1 extends Enemy{
     	}
     	}
     	//5フレームに1回弾を発射する
-    	if(gameinfo.frames % (20/count)==0){
+    	if(gameinfo.frames % ((20/count)+1)==0){
     		double t=rnd.nextDouble()*2*Math.PI;
     		gameinfo.bulletGenerater.generate(new BossBullet(x,y,2*Math.cos(t),2*Math.sin(t)));
     	}
