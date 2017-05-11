@@ -42,6 +42,7 @@ public class Boss1 extends Enemy{
     	//‰æ–ÊŠO‚Ü‚½‚ÍHP<0‚ÅÁ–Å
     	if(!Utility.onScreen(x,y)||hitpoint<0){
     		exist=false;
+    		Sound.play("bosskilled.wav");
     		gameinfo.score+=2000;
     		count++;
     		// gameinfo.clear=true;
