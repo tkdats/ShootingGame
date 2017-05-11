@@ -17,7 +17,7 @@ public class GameManeger {
 	ScoreBoard scoreboard = new ScoreBoard();
 	EnemyGenerater enemyGenerater = new EnemyGenerater();
 	CollisionDetector collisionDetector = new CollisionDetector();
-
+	double score;
 	GameManeger(GameInfo gameinfo) {
 		gameinfo.clear = false;
 		gameinfo.gameOver = false;
@@ -111,6 +111,7 @@ public class GameManeger {
 		if(!player.exist){
 			changeState(GameState.GAMEOVER,gameinfo);
 		}
+		score=gameinfo.score;
 	}
 
 	public boolean onUpdate(GameInfo gameinfo) {
@@ -141,7 +142,8 @@ public class GameManeger {
 		
 		if (gameState == GameState.GAMEOVER) {
 			g.setColor(Color.RED);
-			g.drawString("GameOver", (Utility.sizex + Utility.ScoreBoardWidth) / 2, Utility.sizey / 3);
+			Utility.drawStringCenter(g, "GameOver", (Utility.sizex + Utility.ScoreBoardWidth) / 2, Utility.sizey / 3);
+			Utility.drawStringCenter(g, "Score:"+score, (Utility.sizex + Utility.ScoreBoardWidth) / 2, Utility.sizey*2 / 3);
 		}
 		/////////////////////////////////////////////////////
 		for (int i = 0; i < _objectList.size(); i++) {
