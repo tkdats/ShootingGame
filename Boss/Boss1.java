@@ -22,7 +22,7 @@ public class Boss1 extends Enemy{
     	Random rnd= new Random();
     	Random v_rnd= new Random();
     	//100フレーム毎に画面内に収まるならランダムに動く、そうでなければ動かない
-    	if(gameinfo.frames % 100==0){
+    	if(gameinfo.frames % 100/count==0){
     		double temp_x=x;
         	double temp_y=y;
         	x+=(-1+v_rnd.nextDouble()*2)*200;
