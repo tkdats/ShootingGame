@@ -142,6 +142,7 @@ public class GameManeger {
 		
 		if (gameState == GameState.GAMEOVER) {
 			g.setColor(Color.RED);
+			g.setFont(new Font("TimesRoman", Font.PLAIN, 80));
 			Utility.drawStringCenter(g, "GameOver", (Utility.sizex + Utility.ScoreBoardWidth) / 2, Utility.sizey / 3);
 			Utility.drawStringCenter(g, "Score:"+score, (Utility.sizex + Utility.ScoreBoardWidth) / 2, Utility.sizey*2 / 3);
 		}
