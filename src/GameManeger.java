@@ -120,6 +120,9 @@ public class GameManeger {
 			titleUpdate(gameinfo);
 			break;
 		case MAIN:
+			if(gameinfo.frames % 100==0){
+				//Sound.play("damage1.wav");
+			}
 			mainUpdate(gameinfo);
 			break;
 		case GAMEOVER:
