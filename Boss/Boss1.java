@@ -17,7 +17,7 @@ public class Boss1 extends Enemy{
 		width=50;
 		height=50;
 		r=25;
-		hitpoint=30;
+		hitpoint=100;
 	}
     public boolean onUpdate(GameInfo gameinfo){
     	//100フレーム毎に画面内に収まるならランダムに動く、そうでなければ動かない
