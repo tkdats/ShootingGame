@@ -6,8 +6,7 @@ public class Boss1 extends Enemy{
 	private double vx;
 	private double vy;
 	private int count=1;
-	Random rnd= new Random();
-	Random v_rnd= new Random();
+	
 	//初期化
 	Boss1(double  _x,double  _y, double  _vx,double  _vy){
 		x=_x;
@@ -20,6 +19,8 @@ public class Boss1 extends Enemy{
 		hitpoint=100;
 	}
     public boolean onUpdate(GameInfo gameinfo){
+    	Random rnd= new Random();
+    	Random v_rnd= new Random();
     	//100フレーム毎に画面内に収まるならランダムに動く、そうでなければ動かない
     	if(gameinfo.frames % 100==0){
     		double temp_x=x;
