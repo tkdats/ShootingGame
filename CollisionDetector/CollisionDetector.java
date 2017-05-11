@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class CollisionDetector {
 	private int time;
-	private int hittime;
+	private int hittime;//’¼‘O‚ÉUŒ‚‚ðŽó‚¯‚½ŽžŠÔi–³“GŽžŠÔ—p
 
 	private boolean isHit(Object obj1,Object obj2){
 		double dx=obj1.x-obj2.x;
@@ -28,13 +28,16 @@ public class CollisionDetector {
     			if((isHit(player,_bullets.get(i)))&&(time-hittime>30)){
     				_bullets.get(i).exist=false;
     				player.hitpoint-=1;
+    				Sound.play("playerdamaged.wav");
     				hittime=time;
     			}
     		}
     	}
+		
 		for(int i=0; i<_enemies.size(); i++){
 			if((isHit(player,_enemies.get(i)))&&(time-hittime>30)){
 				player.hitpoint-=1;
+				Sound.play("playerdamaged.wav");
 				hittime=time;
 			}
 			
