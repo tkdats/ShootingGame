@@ -22,6 +22,17 @@ public class Sound {
 	}
 
 	static void play(String filename) {
+		String osname = System.getProperty("os.name");
+		if(osname.indexOf("Windows")>=0){
+		  // Windows‚Å‚ ‚Á‚½‚Æ‚«‚Ìˆ—
+		} else if(osname.indexOf("Linux")>=0){
+			filename="./"+filename;
+		  // Linux‚Å‚ ‚Á‚½‚Æ‚«‚Ìˆ—
+		} else if(osname.indexOf("Mac")>=0){
+		  // MacOS‚Å‚ ‚Á‚½‚Æ‚«‚Ìˆ—
+		} else {
+		  // ‚»‚Ì‘¼‚ÌŠÂ‹«‚¾‚Á‚½‚Æ‚«‚Ìˆ—
+		}
 		String path = new File(".").getAbsoluteFile().getParent();
 		Clip sc;
 		if (!map.containsKey(filename)) {
